@@ -14,7 +14,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>{children}</body>
+        <body className=" flex min-h-screen items-center justify-center bg-zinc-900 text-center text-neutral-100 antialiased">
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
