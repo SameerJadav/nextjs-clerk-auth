@@ -10,9 +10,9 @@ export default function SignIn() {
   return (
     <main>
       {!user.isSignedIn && <SignInButton mode="modal" />}
-      {!!user.isSignedIn && (
+      {user.isSignedIn && (
         <>
-          <p>Welcome, {user.user.username}!</p>
+          <p className="mb-2">Welcome, {user.user.fullName}!</p>
           <SignOutButton />
         </>
       )}
