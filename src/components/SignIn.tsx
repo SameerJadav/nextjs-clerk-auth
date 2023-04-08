@@ -3,16 +3,14 @@
 import { SignInButton, useUser, SignOutButton } from "@clerk/nextjs";
 
 export default function SignIn() {
-  const user = useUser();
-
-  //   console.log("user", user);
+  const { isSignedIn, user } = useUser();
 
   return (
     <main>
-      {!user.isSignedIn && <SignInButton mode="modal" />}
-      {user.isSignedIn && (
+      {!isSignedIn && <SignInButton mode="modal" />}
+      {isSignedIn && (
         <>
-          <p className="mb-2">Welcome, {user.user.fullName}!</p>
+          <p className="mb-2">Welcome, {user.username}!</p>
           <SignOutButton />
         </>
       )}
